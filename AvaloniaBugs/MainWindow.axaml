@@ -1,0 +1,41 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:avaloniaBugs="clr-namespace:AvaloniaBugs"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="AvaloniaBugs.MainWindow"
+        x:DataType="avaloniaBugs:MainWindowViewModel"
+        x:Name="Root"
+        Title="AvaloniaBugs">
+  <Window.DataContext>
+    <avaloniaBugs:MainWindowViewModel />
+  </Window.DataContext>
+  <DockPanel>
+    <Menu DockPanel.Dock="Top">
+      <MenuItem Header="New tab" Command="{CompiledBinding NewTab}" />
+      <MenuItem Header="Close all tabs" Command="{CompiledBinding CloseAllTabs}" />
+    </Menu>
+    <TabStrip DockPanel.Dock="Top" SelectedItem="{CompiledBinding SelectedFile, Mode=TwoWay}" ItemsSource="{CompiledBinding Files}" x:Name="TabStrip">
+      <TabStrip.Styles>
+        <Style Selector="TabStripItem">
+          <Setter Property="Template">
+            <ControlTemplate>
+              <DockPanel>
+                <Button  x:DataType="avaloniaBugs:BigFileViewModel" DockPanel.Dock="Right" Command="{CompiledBinding #Root.((avaloniaBugs:MainWindowViewModel)DataContext).CloseTab}" CommandParameter="{CompiledBinding .}" Content="x" />
+                <TextBlock x:DataType="avaloniaBugs:BigFileViewModel" Text="{CompiledBinding Title}" />
+              </DockPanel>
+            </ControlTemplate>
+          </Setter>
+        </Style>
+      </TabStrip.Styles>
+    </TabStrip>
+    <ContentControl Content="{CompiledBinding #TabStrip.SelectedItem}">
+      <ContentControl.ContentTemplate>
+        <DataTemplate>
+          <avaloniaBugs:FileView />
+        </DataTemplate>
+      </ContentControl.ContentTemplate>
+    </ContentControl>
+  </DockPanel>
+</Window>
