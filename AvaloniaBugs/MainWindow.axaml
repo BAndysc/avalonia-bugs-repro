@@ -1,0 +1,20 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:avaloniaBugs="clr-namespace:AvaloniaBugs"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="AvaloniaBugs.MainWindow"
+        Width="300"
+        Height="200"
+        Title="AvaloniaBugs">
+
+        <Border Margin="100, 70"
+                Width="200"
+                Height="50"
+                Background="Red"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Top"
+                x:Name="Border"/>
+
+</Window>
