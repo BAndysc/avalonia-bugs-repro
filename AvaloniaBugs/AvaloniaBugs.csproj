@@ -12,13 +12,13 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Avalonia" Version="11.2.999-cibuild0046229-beta"/>
-        <PackageReference Include="Avalonia.Desktop" Version="11.2.999-cibuild0046229-beta"/>
-        <PackageReference Include="Avalonia.Themes.Fluent" Version="11.2.999-cibuild0046229-beta"/>
-        <PackageReference Include="Avalonia.Fonts.Inter" Version="11.2.999-cibuild0046229-beta"/>
+        <PackageReference Include="Avalonia" Version="11.2.999-cibuild0047436-alpha"/>
+        <PackageReference Include="Avalonia.Desktop" Version="11.2.999-cibuild0047436-alpha"/>
+        <PackageReference Include="Avalonia.Themes.Fluent" Version="11.2.999-cibuild0047436-alpha"/>
+        <PackageReference Include="Avalonia.Fonts.Inter" Version="11.2.999-cibuild0047436-alpha"/>
         <PackageReference Include="GraphX" Version="3.0.0" />
         <PackageReference Include="NodifyAvalonia" Version="5.2.0.1" />
         <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
-        <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.2.999-cibuild0046229-beta"/>
+        <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.2.999-cibuild0047436-alpha"/>
     </ItemGroup>
 </Project>
